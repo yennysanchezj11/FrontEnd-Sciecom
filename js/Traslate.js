@@ -70,8 +70,6 @@ function translateOfEnglish(){
     switch (traslateLanguaje.value) {
         case "español":
             exitWord = words.find(x => x.english == word.value);
-            console.log("hola");
-            console.log(exitWord.spanish);
             document.getElementById('textTraslateLanguage').value=exitWord.spanish;
             break;
         default:
@@ -83,10 +81,10 @@ function translateOfEnglish(){
 function originalChangeImage(){
    switch (originalLanguaje.value) {
        case "español":
-           document.getElementById("OriginalImage").src="../resource/Español.jpeg";
+           document.getElementById("imageOriginalLanguaje").src="../resource/Español.jpeg";
            break;
         case "ingles":
-            document.getElementById("OriginalImage").src="../resource/Ingles.jpeg";
+            document.getElementById("imageOriginalLanguaje").src="../resource/Ingles.jpeg";
             break;
        default:
            break;
@@ -96,10 +94,10 @@ function originalChangeImage(){
 function traslateChangeImage(){
     switch (traslateLanguaje.value) {
         case "español":
-            document.getElementById("TraslateImage").src="../resource/Español.jpeg";
+            document.getElementById("imageTraslateLanguaje").src="../resource/Español.jpeg";
             break;
          case "ingles":
-             document.getElementById("OriginalImage").src="../resource/Ingles.jpeg";
+             document.getElementById("imageTraslateLanguaje").src="../resource/Ingles.jpeg";
              break;
         default:
             break;
