@@ -1,0 +1,52 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+h1{
+    text-align: center;
+    color: black;
+    font-size: 70px;
+    font-family: monospace ;
+    font-weight: 200;
+    background-color: #dcbafaa4;
+}
+
+option{
+    font-size: 20px;
+}
+
+textarea{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+}
+div{
+    text-align: center;
+    margin-top: 10px;
+}
+
+img{
+    border-radius: 30px;
+}
+
+input{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #dcbafaa4;
+    border-radius: 15px;
+}
+#OriginalLanguage{
+    width: 400px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}
+
+#TraslateLanguage{
+    width: 400px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+}

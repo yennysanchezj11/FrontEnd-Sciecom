@@ -4,40 +4,42 @@
 
 <head>
   <title> Traductor</title>
-  <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
-  <style>
-    textarea {
-      resize: none;
-    }
-  </style>
+  <meta charset="UTF-8">
+
 </head>
 
 <body>
-  <h1>Traductor</h1>
-  <div style="text-align: center;">
-    <div style="margin-top: 60px;">
+  <h1>
+    <br>
+    Traductor
+    <br>
+    <br>
+  </h1>
+  
+  <div>
+    <div>
       <div>
-        <select onchange="originalChangeImage()" for="text" id="OriginalLanguage" style="width:300px">
+        <select onchange="originalChangeImage()" for="text" id="OriginalLanguage">
           <option value="ingles">Inglés</option>
           <option value="español">Español</option>
         </select>
         <img id="imageOriginalLanguaje" src="../resource/Ingles.jpeg" width="60" height="60">  
-        <select onchange="traslateChangeImage()" for="text2" id="TraslateLanguage" style="width:300px">
+        <select onchange="traslateChangeImage()" for="text2" id="TraslateLanguage">
           <option value="español">Español</option>
           <option value="ingles">Inglés</option>
         </select>
         <img id="imageTraslateLanguaje" src="../resource/Español.jpeg" width="60" height="60">  
       </div>
       <br>
-      <div>
-        <textarea id="textOriginLanguage"  rows="20" cols="50"  placeholder="Escribe o pega la palabra aquí."></textarea>
-        <textarea id="textTraslateLanguage" rows="20" cols="50" placeholder="Palabra traducida."></textarea>
+      <div> 
+        <textarea id="textOriginLanguage"  rows="18" cols="50"  placeholder="Escribe o pega la palabra aquí."></textarea>
+        <textarea id="textTraslateLanguage" rows="18" cols="50" placeholder="Palabra traducida."></textarea>
       </div>
     </div>
   </div>
-    <div style="text-align: center;">
-    <input onclick=findWord() type="button" value="Traducir" >
+    <div>
+    <input onclick=findWord() type="button" value="  Traducir  " >
   </div>
   <script src="../js/Traslate.js"></script>
 </body>
