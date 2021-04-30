@@ -13,29 +13,31 @@
 </head>
 
 <body>
-
   <h1 style="text-align: center;">Traductor</h1>
   <div style="text-align: center;">
     <div style="margin-top: 60px;">
       <div>
-        <select for="text" id="Languages" style="width:383px">
+        <select for="text" id="OriginLanguage" style="width:300px">
           <option value="ingles">Inglés</option>
           <option value="español">Español</option>
         </select>
-        <select for="text2" id="Languages" style="width:383px">
-          <option value="Ingles">Inglés</option>
-          <option value="Español">Español</option>
+        <img  src="../resource/Ingles.jpeg" width="60" height="60">  
+        <select for="text2" id="TraslateLanguage" style="width:300px">
+          <option value="ingles">Español</option>
+          <option value="español">Inglés</option>
         </select>
+        <img src="../resource/Español.jpeg" width="60" height="60">  
       </div>
       <br>
       <div>
-        <textarea id="text" name="text" rows="20" cols="50"  placeholder="Escribe o pega la palabra aquí."></textarea>
-        <textarea id="text2" name="text2" rows="20" cols="50"></textarea>
+        <textarea id="textOriginLanguage"  rows="20" cols="50"  placeholder="Escribe o pega la palabra aquí."></textarea>
+        <textarea id="textTraslateLanguage" rows="20" cols="50" placeholder="Palabra traducida."></textarea>
       </div>
     </div>
   </div>
     <div style="text-align: center;">
-    <input type="button" value="Traducir" >
+    <input onclick=findWord() type="button" value="Traducir" >
   </div>
+  <script src="../js/Traslate.js"></script>
 </body>
 </html>
