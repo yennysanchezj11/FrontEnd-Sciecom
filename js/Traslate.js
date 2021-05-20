@@ -12,6 +12,9 @@ function loadWords(){
     fetch('../resource/words.json')
     .then(response=>response.json())
     .then(response => words=response)
+    .catch(function(error) {
+        console.log('Hubo un problema con la lectura de archivos:' + error.message);
+    });
 }
 
 function findWord(){
