@@ -1,44 +1,18 @@
-
-var words=[{
-    spanish:"hola",
-    english:"hello",
-    },
-    {
-    spanish:"saber",
-    english:"know",
-    },
-    {
-    spanish:"muchos",
-    english:"many",
-    },
-    {
-    spanish:"gustar",
-    english:"like",
-    },
-    {
-    spanish:"cosa",
-    english:"thing",
-    },
-    {
-    spanish:"numero",
-    english:"number",
-    },
-    {
-    spanish:"gente",
-    english:"people",
-    },
-    {
-    spanish:"despues",
-    english:"after",
-    }
-]
-
+var words;
 var word=document.getElementById('textOriginLanguage');
 var originalLanguaje=document.getElementById('OriginalLanguage');
 var traslateLanguaje=document.getElementById('TraslateLanguage');
 var exitWord;
+loadWords();
 
 
+
+
+function loadWords(){
+    fetch('../resource/words.json')
+    .then(response=>response.json())
+    .then(response => words=response)
+}
 
 function findWord(){
     switch (originalLanguaje.value) {
@@ -57,8 +31,13 @@ function findWord(){
 function translateOfSpanish(){
     switch (traslateLanguaje.value) {
         case "ingles":
-            exitWord = words.find(x => x.spanish == word.value);
-            document.getElementById('textTraslateLanguage').value=exitWord.english;
+            try {
+                exitWord = words.find(x => x.spanish == word.value.trim());
+                document.getElementById('textTraslateLanguage').value=exitWord.english;
+            } catch (error) {
+                alert("Error: Verifique la palabra ingresada")
+            }
+            
             break;
         default:
             break;
@@ -69,8 +48,12 @@ function translateOfSpanish(){
 function translateOfEnglish(){
     switch (traslateLanguaje.value) {
         case "español":
-            exitWord = words.find(x => x.english == word.value);
-            document.getElementById('textTraslateLanguage').value=exitWord.spanish;
+            try {
+                exitWord = words.find(x=>x.english==word.value.trim())
+                document.getElementById('textTraslateLanguage').value=exitWord.spanish;
+            } catch (error) {
+                alert("Error: Verifique la palabra ingresada")
+            }
             break;
         default:
             break;
@@ -79,28 +62,35 @@ function translateOfEnglish(){
 
 
 function originalChangeImage(){
-   switch (originalLanguaje.value) {
-       case "español":
-           document.getElementById("imageOriginalLanguaje").src="../resource/Español.jpeg";
-           break;
+cleanTraductor()
+switch (originalLanguaje.value) {
+    case "español":
+        document.getElementById("imageOriginalLanguaje").src="../resource/Español.jpeg";
+        break;
         case "ingles":
             document.getElementById("imageOriginalLanguaje").src="../resource/Ingles.jpeg";
             break;
-       default:
-           break;
-   }
+    default:
+        break;
+}
 }
 
 function traslateChangeImage(){
+cleanTraductor()
     switch (traslateLanguaje.value) {
         case "español":
             document.getElementById("imageTraslateLanguaje").src="../resource/Español.jpeg";
             break;
-         case "ingles":
-             document.getElementById("imageTraslateLanguaje").src="../resource/Ingles.jpeg";
-             break;
+        case "ingles":
+            document.getElementById("imageTraslateLanguaje").src="../resource/Ingles.jpeg";
+            break;
         default:
             break;
     }
 }
 
+
+function cleanTraductor(){
+    document.getElementById('textOriginLanguage').value=" ";
+    document.getElementById('textTraslateLanguage').value=" ";
+}
